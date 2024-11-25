@@ -20,6 +20,10 @@ def get_wrong_article() -> str:
 
 def recover_article() -> str:
     wrong_article = get_wrong_article()
-
-    # Ваш код ниже, возвращайте уже отредактированный текст!
+    wrong_article = wrong_article.split(".\n")
+    wrong_article = [
+        sentence[::-1].strip("!").replace("WOOF-WOOF", "CAT").capitalize()
+        for sentence in wrong_article
+    ]
+    wrong_article = ".\n".join(wrong_article)
     return wrong_article
