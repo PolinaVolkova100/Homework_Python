@@ -20,6 +20,6 @@ def decode_numbers(numbers: str) -> str | None:
         ) <= len(symbols[number[0]]):
             result += symbols[number[0]][len(number) - 1]
         else:
-            result = "None"
+            result = None
             break
     return result
