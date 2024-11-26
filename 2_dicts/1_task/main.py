@@ -1,3 +1,4 @@
+from decimal import Decimal
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -36,7 +37,7 @@ def get_parsed_employees_info() -> list[dict[str, int | str]]:
                 if lst[i] == "id" or lst[i] == "age":
                     dct[lst[i]] = int(lst[i + 1])
                 elif lst[i] == "salary":
-                    dct[lst[i]] = float(lst[i + 1])
+                    dct[lst[i]] = Decimal(lst[i + 1])
                 else:
                     dct[lst[i]] = lst[i + 1]
         parsed_employees_info.append(dct)
