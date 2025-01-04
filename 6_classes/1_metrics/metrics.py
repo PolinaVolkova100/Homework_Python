@@ -2,6 +2,9 @@ import csv
 from typing import Protocol
 from datetime import datetime, timezone
 
+class TypeFile(Protocol):
+    def file_writing(self, data: list[list[str | int]]) -> None:
+        pass
 
 class Txt:
     def __init__(self, path: str):
@@ -35,9 +38,7 @@ class Csv:
             writer.writerows(data)
 
 
-class TypeFile(Protocol):
-    def writer(self, data: list[list[str | int]]) -> None:
-        pass
+
 
 
 class Statsd:
